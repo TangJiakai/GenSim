@@ -1,0 +1,16 @@
+# general settings
+project_name: job_seeking
+round_n: 1
+embedding_api: [http://localhost:8666, http://localhost:8667, http://localhost:8668,
+  http://localhost:8669]
+host: localhost
+base_port: 13000
+server_num_per_host: 90
+load_simulator_path:
+runtime_id:
+
+# custom settings
+agent_configs_paths:
+  SeekerAgent: SeekerAgent_configs.json
+  InterviewerAgent: InterviewerAgent_configs.json
+pool_size: 10

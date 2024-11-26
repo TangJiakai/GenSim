@@ -1,0 +1,5 @@
+SFT_FILE_PATH = "llm_tuning/datasets/sft_data"
+PPO_FILE_PATH = "llm_tuning/datasets/ppo_data"
+TMP_SAVE_DIR = "llm_tuning/tmp_saves"
+SAVE_DIR = "llm_tuning/saves"
+ADAPTER_CONFIG_FILE_NAME = "adapter_config.json"

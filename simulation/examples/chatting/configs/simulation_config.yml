@@ -1,0 +1,14 @@
+# general settings
+model_configs_path: model_configs.json
+project_name: chatting
+round_n: 1
+embedding_api: [http://localhost:8666]
+host: localhost
+base_port: 13000
+server_num_per_host: 5
+load_simulator_path:
+runtime_id:
+
+# custom settings
+agent_configs_paths:
+  ChatRoomAgent: ChattingAgent_configs.json

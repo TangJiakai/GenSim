@@ -1,0 +1,63 @@
+{##################################### Profile #####################################}
+{% macro profile(job) %}
+You are an interviewer. 
+The basic information for the position is as follows:
+Position Title: {{job.name}}
+Position Description: {{job.jd}}
+Position Requirements: 
+{% for jr in job.jr %}
+- {{jr}}
+{% endfor %}
+{% endmacro %}
+
+
+
+{##################################### Instruction #####################################}
+{% macro screening_cv_instruction(seeker) %}
+Please decide whether to allow the candidate to pass the resume screening based on their information.
+{% endmacro %}
+
+{% macro interview_opening_instruction() %}
+You are an interviewer currently attending an interview.
+Due to time constraints, please ensure the conversation is concise.
+{% endmacro %}
+
+{% macro interview_closing_instruction() %}
+The interview is now over. 
+Finally, please consider the interview situation and decide whether to hire the seeker. 
+{% endmacro %}
+
+
+
+{##################################### Observation #####################################}
+{% macro make_choice_observation(actions) %}
+Please make a choice from the actions below (output the index, e.g., 0):
+{% for action in actions %}
+    ({{loop.index0}}) {{action}}
+{% endfor %}
+{% endmacro %}
+
+{% macro screening_cv_observation(seeker_info, actions) %}
+The information of the job seeker is as follows:
+{{seeker_info}}
+{{ make_choice_observation(actions) }}
+{% endmacro %}
+
+{% macro make_interview_decision_observation(dialog, actions) %}
+The interview is over.
+The conversation is as follows:
+{{ dialog }}
+
+You need to make a final decision based on the interview.
+{{ make_choice_observation(actions) }}
+{% endmacro %}
+
+
+{% macro receive_notification_observation(seeker_name, is_accept) %}
+Job seeker {{seeker_name}} chose to
+{% if is_accept %}
+{{ seeker_name }} accept the offer.
+{% else %}
+{{ seeker_name }} reject the offer.
+{% endif %}
+{% endmacro %}

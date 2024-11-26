@@ -1,0 +1,16 @@
+# general settings
+model_configs_path: model_configs.json
+project_name: recommendation
+round_n: 1
+embedding_api: [http://localhost:8666, http://localhost:8667, http://localhost:8668,
+  http://localhost:8669]
+host: localhost
+base_port: 13000
+server_num_per_host: 90
+load_simulator_path:
+runtime_id:
+
+# custom settings
+agent_configs_paths:
+  RecUserAgent: RecUserAgent_configs.json
+item_infos_path: item_infos.json

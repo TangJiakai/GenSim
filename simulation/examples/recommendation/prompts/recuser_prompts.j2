@@ -1,0 +1,54 @@
+{##################################### Profile #####################################}
+
+
+
+{##################################### Instruction #####################################}
+{% macro start_action_instruction() %}
+You are currently browsing a movie website, and at the same time, you can post online to your good friends or chat with a particular friend.
+{% endmacro %}
+
+{% macro generate_feeling_instruction() %}
+After watching the movie, please generate a feeling about the movie.
+{% endmacro %}
+
+{% macro rating_item_instruction() %}
+Please rate the movie you have watched. Ratings are made on a 5-star scale, with half-star increments (0.5 stars - 5.0 stars).
+{% endmacro %}
+
+{% macro recommend_instruction() %}
+You are currently browsing a movie website. Please select a suitable movie based on your personal preferences and viewing history, and watch it.
+{% endmacro %}
+
+{% macro conversation_instruction() %}
+A pair of friends is about to start a movie-themed conversation. The chat will focus on movies they've recently watched or heard about. Please complete the dialogue based on the user's profile and memories.
+{% endmacro %}
+
+{% macro post_instruction() %}
+Please simulate the following user and post on the internet about a movie you’ve recently watched, learned about, or want to learn more about. 
+Your good friends will see your post.
+{% endmacro %}
+
+
+{##################################### Memory #####################################}
+
+
+
+
+{##################################### Observation #####################################}
+{% macro make_choice_observation(actions) %}
+Please make a choice from the actions below (output the index, e.g., 0):
+{% for action in actions %}
+    ({{loop.index0}}) {{action}}
+{% endfor %}
+Answer:
+{% endmacro %}
+
+{% macro rating_item_observation(movie, actions) %}
+You have finished watching the movie: {{movie}}. You will now rate this movie.
+{{ make_choice_observation(actions) }}
+{% endmacro %}
+
+{% macro generate_feeling_observation(movie) %}
+You have finished watching the movie: {{movie}}. Please generate a feeling about the movie.
+Answer:
+{% endmacro %}

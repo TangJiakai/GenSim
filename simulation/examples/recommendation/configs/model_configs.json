@@ -1,0 +1,32 @@
+[
+    {
+        "config_name": "LLM-1",
+        "model_type": "openai_chat",
+        "model_name": "your_llm_model_path or id set in vllm",
+        "api_key": "api_key",
+        "client_args": {
+            "max_retries": 10,
+            "base_url": "base_url",
+            "timeout": 6000
+        },
+        "generate_args": {
+            "temperature": 0.7,
+            "max_tokens": 512
+        }
+    },
+    {
+        "config_name": "LLM-2",
+        "model_type": "openai_chat",
+        "model_name": "your_llm_model_path or id set in vllm",
+        "api_key": "api_key",
+        "client_args": {
+            "max_retries": 10,
+            "base_url": "base_url",
+            "timeout": 6000
+        },
+        "generate_args": {
+            "temperature": 0.7,
+            "max_tokens": 512
+        }
+    }
+]

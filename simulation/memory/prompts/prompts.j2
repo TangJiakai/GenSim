@@ -1,0 +1,38 @@
+{% macro score_importance_prompt(memory_content) %}
+On the scale of 1 to 10, where 1 is purely mundane  (e.g., brushing teeth, making bed) and 10 is extremely poignant (e.g., a break up, college acceptance), rate the likely poignancy of the following piece of memory. Always answer with only a number.
+Memory: {{ memory_content }}
+Rating: 
+{% endmacro %}
+
+
+{% macro format_memories_detail_prompt(memories, with_index=False) %}
+{% for mem in memories %}
+    {% if with_index %}
+{{ loop.index }}. [{{ mem.timestamp }}] {{ mem.content }}
+    {% else %}
+- [{{ mem.timestamp }}] {{ mem.content }}
+    {% endif %}
+{% endfor %}
+{% endmacro %}
+
+
+{% macro get_topics_of_reflection_prompt(memories) %}
+{{ format_memories_detail_prompt(memories, False) }}
+Given only the information above, what are the 3 most salient high-level questions we can answer about the subjects in the statements?
+Provide each question on a new line.
+{% endmacro %}
+
+
+{% macro get_insights_on_topic_prompt(related_memories, topic, with_index=False) %}
+Statements relevant to: '{{topic}}'
+---
+{{format_memories_detail_prompt(related_memories, with_index)}}
+---
+What 5 high-level novel insights can you infer from the above statements that are relevant for answering the following question?
+Do not include any insights that are not relevant to the question.
+Do not repeat any insights that have already been made.
+
+Question: {{ topic }}
+
+(example format: insight (because of 1, 5, 3))
+{% endmacro %}
