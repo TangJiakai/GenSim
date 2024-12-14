@@ -23,13 +23,18 @@ With the rapid advancement of large language models (LLMs), recent years have wi
 
 
 
-## 1. Platform Interface
+## 1. Platform Display
 
 <p align="center">
   <img src="assets/platform.png" alt="The platform interface" width="100%">
   <br>
   <b>Figure 2</b>: The platform interface
 </p>
+
+<video width="640" height="360" controls>
+  <source src="assets/video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 
 ## 2. Usage
