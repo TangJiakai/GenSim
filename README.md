@@ -23,7 +23,7 @@ With the rapid advancement of large language models (LLMs), recent years have wi
 
 
 
-## 1. Platform Display
+## 1. Platform Overview
 
 <p align="center">
   <img src="assets/platform.png" alt="The platform interface" width="100%">
@@ -31,11 +31,7 @@ With the rapid advancement of large language models (LLMs), recent years have wi
   <b>Figure 2</b>: The platform interface
 </p>
 
-<video width="640" height="360" controls>
-  <source src="assets/video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SZf8mvhkLvI" frameborder="0" allowfullscreen></iframe>
 
 ## 2. Usage
 ### 2.1 Installation
