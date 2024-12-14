@@ -31,7 +31,6 @@ With the rapid advancement of large language models (LLMs), recent years have wi
   <b>Figure 2</b>: The platform interface
 </p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SZf8mvhkLvI" frameborder="0" allowfullscreen></iframe>
 
 ## 2. Usage
 ### 2.1 Installation
